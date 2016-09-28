@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title></title>
+    <style>
+	.div1{
+height:300px;
+width:300px;
+padding:10px;
+border:1px solid blue;
+display:none;
+	
+	} 
+	
+	</style>
+	
+    
+  </head>
+  <body>
+<h1> sliding down methods in jquery</h1>
+<input type="button" value="slide down" id="btnslide" />
+<div class="div1">
+The optional speed parameter defines the speed of effect. It can take the following values "slow","fast", or
+medium
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+$("#btnslide").click(function(){
+$(".div1").slideDown(10000,myfun);
+});
+});
+function myfun(){
+alert("Effect completed");
+}
+</script>
+  </body>
+</html>

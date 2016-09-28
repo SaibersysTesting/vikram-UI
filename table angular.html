@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="tablescript.js"></script>
+    
+    <link href="table.css" rel="stylesheet" />
+</head>
+<body ng-app="my module">
+    <div ng-controller="mycontroller">
+        Select: <select ng-model="sortColumn"  >
+                    <option value="+name">Name Asc</option>
+                    <option value="+dob">DOB Asc</option>
+                    <option value="+gender">Gender Asc</option>
+                    <option value="-salary">Salary Asc</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>salary(normal)</th>
+                    
+                    </tr>
+                </thead>
+            <tbody ng-repeat="salary in salaries | orderBy: sortColumn">
+                <tr>
+                    <td>{{salary.name  }}</td>
+                    <td>{{salary.dob | date:"dd/MM/yyyy"}}</td>
+                    <td>{{salary.gender }}</td>                
+                    <td>{{salary.salary | currency}}</td>
+                    </tr>
+                <tbody>
+            </table>
+        </div>
+</body>
+</html>
